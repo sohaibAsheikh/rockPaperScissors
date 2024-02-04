@@ -6,8 +6,8 @@ function getComputerChoice() {
   
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase(); // Make it case-insensitive
-
-    if (playerSelection === computerSelection.toLowerCase()) {
+    computerSelection = computerSelection.toLowerCase();
+    if (playerSelection === computerSelection) {
     return "It's a tie! Both chose " + playerSelection;
     } else if (
     (playerSelection === 'rock' && computerSelection === 'scissors') ||
@@ -35,9 +35,9 @@ function playGame() {
       const roundResult = playRound(playerSelection, computerSelection);
       console.log(roundResult);
   
-      if (roundResult.includes("Win")) {
+      if (roundResult.includes("win")) {
         playerScore++;
-      } else if (roundResult.includes("Lose")) {
+      } else if (roundResult.includes("lose")) {
         computerScore++;
       }
     }
